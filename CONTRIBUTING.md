@@ -13,4 +13,4 @@
 1. Install dependencies with `python -m pip install -r requirements.txt`.
 2. Install the package with `python -m pip install -e .`.
 3. Run `python -m pytest`.
-4. If you changed notebooks, run them top to bottom before opening a pull request.
+4. If you changed notebooks, run `python scripts/run_notebooks.py`.

@@ -1186,7 +1186,7 @@ def root_readme() -> str:
     )
     return f"""# Mathematics for Machine Learning
 
-[![build](https://img.shields.io/badge/build-pytest%20ready-0A7B83)](./README.md)
+[![ci](https://github.com/AKMessi/math-for-ML/actions/workflows/ci.yml/badge.svg)](https://github.com/AKMessi/math-for-ML/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-1F6FEB)](./LICENSE)
 [![contributions](https://img.shields.io/badge/contributions-welcome-2DA44E)](./CONTRIBUTING.md)
 
@@ -1244,6 +1244,12 @@ Run the test suite with:
 python -m pytest
 ```
 
+Run notebook execution checks with:
+
+```bash
+python scripts/run_notebooks.py
+```
+
 ## Sections
 
 | Section | Scope |
@@ -1282,11 +1288,11 @@ def generate() -> None:
     write_text(ROOT / "README.md", root_readme())
     write_text(
         ROOT / "CONTRIBUTING.md",
-        "# Contributing\n\n## Standards\n\n- Put intuition before equations.\n- Derive results instead of skipping steps.\n- Keep implementations readable, typed, and documented.\n- Verify important calculations against PyTorch.\n- Add or update pytest coverage for source changes.\n\n## Workflow\n\n1. Install dependencies with `python -m pip install -r requirements.txt`.\n2. Install the package with `python -m pip install -e .`.\n3. Run `python -m pytest`.\n4. If you changed notebooks, run them top to bottom before opening a pull request.\n",
+        "# Contributing\n\n## Standards\n\n- Put intuition before equations.\n- Derive results instead of skipping steps.\n- Keep implementations readable, typed, and documented.\n- Verify important calculations against PyTorch.\n- Add or update pytest coverage for source changes.\n\n## Workflow\n\n1. Install dependencies with `python -m pip install -r requirements.txt`.\n2. Install the package with `python -m pip install -e .`.\n3. Run `python -m pytest`.\n4. If you changed notebooks, run `python scripts/run_notebooks.py`.\n",
     )
     write_text(
         ROOT / "ROADMAP.md",
-        "# Roadmap\n\n## Done\n\n- [x] Installable `math_for_ml` package\n- [x] Topic scaffolding and 59 notebooks\n- [x] Notebook-local wrapper modules\n- [x] Pytest coverage for the main source modules\n- [x] Cheatsheets and learner guidance\n\n## Next\n\n- [ ] Expand more notebooks with longer derivations and custom figures\n- [ ] Add notebook execution checks in CI\n- [ ] Add more reusable diagrams under `assets/diagrams/`\n- [ ] Add richer model-specific case studies in the applied section\n",
+        "# Roadmap\n\n## Done\n\n- [x] Installable `math_for_ml` package\n- [x] Topic scaffolding and 59 notebooks\n- [x] Notebook-local wrapper modules\n- [x] Pytest coverage for the main source modules\n- [x] Cheatsheets and learner guidance\n- [x] Expand more notebooks with longer derivations and custom figures\n- [x] Add notebook execution checks in CI\n- [x] Add more reusable diagrams under `assets/diagrams/`\n- [x] Add richer model-specific case studies in the applied section\n",
     )
     write_text(ROOT / "LICENSE", "MIT License\n\nCopyright (c) 2026 Open Source Contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.")
     write_text(ROOT / "00_how_to_use" / "learning_paths.md", "# Learning Paths\n\n- Beginner: start with linear algebra, calculus, probability, then applied ML math.\n- Practitioner: jump to SVD, matrix calculus, optimization, numerical stability, and applied notebooks.\n- Researcher: read section README files, then prioritize Jacobians, Hessians, Bayesian inference, information theory, spectral graphs, transformers, diffusion, and VAEs.\n- Quick Reference: use `cheatsheets/` and topic README files.\n")

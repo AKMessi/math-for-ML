@@ -7,10 +7,7 @@
 - [x] Notebook-local wrapper modules
 - [x] Pytest coverage for the main source modules
 - [x] Cheatsheets and learner guidance
-
-## Next
-
-- [ ] Expand more notebooks with longer derivations and custom figures
-- [ ] Add notebook execution checks in CI
-- [ ] Add more reusable diagrams under `assets/diagrams/`
-- [ ] Add richer model-specific case studies in the applied section
+- [x] Expand more notebooks with longer derivations and custom figures
+- [x] Add notebook execution checks in CI
+- [x] Add more reusable diagrams under `assets/diagrams/`
+- [x] Add richer model-specific case studies in the applied section

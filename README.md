@@ -1,6 +1,6 @@
 # Mathematics for Machine Learning
 
-[![build](https://img.shields.io/badge/build-pytest%20ready-0A7B83)](./README.md)
+[![ci](https://github.com/AKMessi/math-for-ML/actions/workflows/ci.yml/badge.svg)](https://github.com/AKMessi/math-for-ML/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-1F6FEB)](./LICENSE)
 [![contributions](https://img.shields.io/badge/contributions-welcome-2DA44E)](./CONTRIBUTING.md)
 
@@ -56,6 +56,12 @@ Run the test suite with:
 
 ```bash
 python -m pytest
+```
+
+Run notebook execution checks with:
+
+```bash
+python scripts/run_notebooks.py
 ```
 
 ## Sections
