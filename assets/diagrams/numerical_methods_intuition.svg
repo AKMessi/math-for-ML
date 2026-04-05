@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+  <rect width="980" height="300" fill="#fffdfa"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#36454f">Numerical Methods Intuition Map</text>
+  <rect x="50" y="95" width="160" height="90" rx="16" fill="#e8f1ff" stroke="#3563a9" stroke-width="2"/>
+  <rect x="260" y="95" width="180" height="90" rx="16" fill="#eefbf1" stroke="#248a5a" stroke-width="2"/>
+  <rect x="500" y="95" width="180" height="90" rx="16" fill="#fff4df" stroke="#c27a00" stroke-width="2"/>
+  <rect x="730" y="95" width="180" height="90" rx="16" fill="#ffe5ea" stroke="#c53030" stroke-width="2"/>
+  <text x="80" y="132" font-family="Arial" font-size="22" fill="#36454f">representation</text>
+  <text x="86" y="158" font-family="Arial" font-size="15" fill="#36454f">floating point values</text>
+  <text x="313" y="132" font-family="Arial" font-size="22" fill="#1f5f43">stability</text>
+  <text x="292" y="158" font-family="Arial" font-size="15" fill="#1f5f43">will errors stay small?</text>
+  <text x="539" y="132" font-family="Arial" font-size="22" fill="#8a5a00">conditioning</text>
+  <text x="525" y="158" font-family="Arial" font-size="15" fill="#8a5a00">is the problem itself sensitive?</text>
+  <text x="762" y="132" font-family="Arial" font-size="22" fill="#8f2230">approximation</text>
+  <text x="750" y="158" font-family="Arial" font-size="15" fill="#8f2230">discrete computation of continuous math</text>
+  <path d="M210 140 H260" stroke="#36454f" stroke-width="4" fill="none"/>
+  <path d="M440 140 H500" stroke="#36454f" stroke-width="4" fill="none"/>
+  <path d="M680 140 H730" stroke="#36454f" stroke-width="4" fill="none"/>
+  <text x="48" y="230" font-family="Arial" font-size="18" fill="#36454f">Core movie:</text>
+  <text x="145" y="230" font-family="Arial" font-size="18" fill="#36454f">exact math -> finite representation -> algorithmic error -> practical reliability</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+  <rect width="980" height="300" fill="#fbfcff"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#213547">Optimization Intuition Map</text>
+  <path d="M70 210 C180 120 280 140 390 220 S620 260 760 150 S900 90 930 180" fill="none" stroke="#94a3b8" stroke-width="5"/>
+  <circle cx="150" cy="170" r="10" fill="#2563eb"/>
+  <circle cx="260" cy="175" r="10" fill="#2563eb"/>
+  <circle cx="355" cy="204" r="10" fill="#2563eb"/>
+  <circle cx="470" cy="230" r="10" fill="#16a34a"/>
+  <circle cx="585" cy="205" r="10" fill="#16a34a"/>
+  <circle cx="700" cy="165" r="10" fill="#d97706"/>
+  <text x="86" y="110" font-family="Arial" font-size="18" fill="#213547">gradient steps</text>
+  <text x="386" y="262" font-family="Arial" font-size="18" fill="#213547">valley floor</text>
+  <text x="638" y="122" font-family="Arial" font-size="18" fill="#213547">curvature changes step quality</text>
+  <text x="42" y="250" font-family="Arial" font-size="18" fill="#213547">Core movie:</text>
+  <text x="143" y="250" font-family="Arial" font-size="18" fill="#213547">geometry of the loss + information in the update rule + learning rate choice</text>
+</svg>

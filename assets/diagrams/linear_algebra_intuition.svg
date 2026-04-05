@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+  <rect width="980" height="300" fill="#f8fbff"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#12344d">Linear Algebra Intuition Map</text>
+  <rect x="40" y="95" width="160" height="90" rx="16" fill="#d9ecff" stroke="#2b6cb0" stroke-width="2"/>
+  <rect x="250" y="95" width="160" height="90" rx="16" fill="#dff6e4" stroke="#2f855a" stroke-width="2"/>
+  <rect x="460" y="95" width="180" height="90" rx="16" fill="#fff1d6" stroke="#c47a00" stroke-width="2"/>
+  <rect x="700" y="95" width="220" height="90" rx="16" fill="#fde2e4" stroke="#c53030" stroke-width="2"/>
+  <text x="90" y="132" font-family="Arial" font-size="22" fill="#12344d">vectors</text>
+  <text x="72" y="158" font-family="Arial" font-size="15" fill="#12344d">states and directions</text>
+  <text x="295" y="132" font-family="Arial" font-size="22" fill="#184d36">matrices</text>
+  <text x="274" y="158" font-family="Arial" font-size="15" fill="#184d36">machines on vectors</text>
+  <text x="491" y="132" font-family="Arial" font-size="22" fill="#8a5a00">eigen / SVD</text>
+  <text x="494" y="158" font-family="Arial" font-size="15" fill="#8a5a00">hidden simple directions</text>
+  <text x="760" y="132" font-family="Arial" font-size="22" fill="#8f2230">PCA / norms</text>
+  <text x="736" y="158" font-family="Arial" font-size="15" fill="#8f2230">what matters and how we measure it</text>
+  <path d="M200 140 H250" stroke="#12344d" stroke-width="4" fill="none"/>
+  <path d="M410 140 H460" stroke="#12344d" stroke-width="4" fill="none"/>
+  <path d="M640 140 H700" stroke="#12344d" stroke-width="4" fill="none"/>
+  <text x="46" y="230" font-family="Arial" font-size="18" fill="#12344d">Core movie:</text>
+  <text x="145" y="230" font-family="Arial" font-size="18" fill="#12344d">describe data -> transform it -> reveal structure -> keep the important directions</text>
+</svg>

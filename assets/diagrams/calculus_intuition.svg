@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+  <rect width="980" height="300" fill="#fbfbfe"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#2b2d42">Calculus Intuition Map</text>
+  <rect x="50" y="95" width="150" height="90" rx="16" fill="#e5f0ff" stroke="#3563a9" stroke-width="2"/>
+  <rect x="250" y="95" width="170" height="90" rx="16" fill="#e6fff4" stroke="#248a5a" stroke-width="2"/>
+  <rect x="470" y="95" width="170" height="90" rx="16" fill="#fff2dc" stroke="#c27a00" stroke-width="2"/>
+  <rect x="690" y="95" width="220" height="90" rx="16" fill="#ffe4ef" stroke="#b83280" stroke-width="2"/>
+  <text x="87" y="132" font-family="Arial" font-size="22" fill="#2b2d42">derivative</text>
+  <text x="93" y="158" font-family="Arial" font-size="15" fill="#2b2d42">local slope</text>
+  <text x="302" y="132" font-family="Arial" font-size="22" fill="#16553d">gradient</text>
+  <text x="273" y="158" font-family="Arial" font-size="15" fill="#16553d">best local direction</text>
+  <text x="518" y="132" font-family="Arial" font-size="22" fill="#8a5a00">Jacobian / Hessian</text>
+  <text x="501" y="158" font-family="Arial" font-size="15" fill="#8a5a00">full sensitivity and curvature</text>
+  <text x="735" y="132" font-family="Arial" font-size="22" fill="#8a1f5d">chain rule / autodiff</text>
+  <text x="727" y="158" font-family="Arial" font-size="15" fill="#8a1f5d">local changes through a pipeline</text>
+  <path d="M200 140 H250" stroke="#2b2d42" stroke-width="4" fill="none"/>
+  <path d="M420 140 H470" stroke="#2b2d42" stroke-width="4" fill="none"/>
+  <path d="M640 140 H690" stroke="#2b2d42" stroke-width="4" fill="none"/>
+  <text x="48" y="230" font-family="Arial" font-size="18" fill="#2b2d42">Core question:</text>
+  <text x="182" y="230" font-family="Arial" font-size="18" fill="#2b2d42">if I change this input a little, what changes, in what direction, and by how much?</text>
+</svg>
