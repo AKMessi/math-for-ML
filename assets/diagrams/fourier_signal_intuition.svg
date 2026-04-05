@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+  <rect width="980" height="300" fill="#fbfcff"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#1d3557">Fourier And Signal Intuition Map</text>
+  <path d="M60 165 C100 90 140 240 180 165 S260 90 300 165" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <rect x="360" y="95" width="170" height="90" rx="16" fill="#e6fff4" stroke="#248a5a" stroke-width="2"/>
+  <rect x="590" y="95" width="170" height="90" rx="16" fill="#fff2dc" stroke="#c27a00" stroke-width="2"/>
+  <rect x="800" y="95" width="130" height="90" rx="16" fill="#ffe4ef" stroke="#b83280" stroke-width="2"/>
+  <text x="78" y="215" font-family="Arial" font-size="18" fill="#1d3557">time signal</text>
+  <text x="392" y="132" font-family="Arial" font-size="22" fill="#1d3557">frequency view</text>
+  <text x="395" y="158" font-family="Arial" font-size="15" fill="#1d3557">which oscillations are present?</text>
+  <text x="617" y="132" font-family="Arial" font-size="22" fill="#8a5a00">convolution</text>
+  <text x="608" y="158" font-family="Arial" font-size="15" fill="#8a5a00">filtering becomes multiplication</text>
+  <text x="815" y="132" font-family="Arial" font-size="22" fill="#8a1f5d">position</text>
+  <text x="812" y="158" font-family="Arial" font-size="15" fill="#8a1f5d">frequency features for order</text>
+  <path d="M300 145 H360" stroke="#1d3557" stroke-width="4" fill="none"/>
+  <path d="M530 145 H590" stroke="#1d3557" stroke-width="4" fill="none"/>
+  <path d="M760 145 H800" stroke="#1d3557" stroke-width="4" fill="none"/>
+  <text x="48" y="245" font-family="Arial" font-size="18" fill="#1d3557">Core movie:</text>
+  <text x="146" y="245" font-family="Arial" font-size="18" fill="#1d3557">same signal, new basis -> simpler reasoning about patterns and filters</text>
+</svg>

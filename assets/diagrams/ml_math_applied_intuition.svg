@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="320" viewBox="0 0 980 320">
+  <rect width="980" height="320" fill="#fffdfb"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#1f2937">ML Math Applied Intuition Map</text>
+  <rect x="55" y="90" width="150" height="80" rx="16" fill="#e5f0ff" stroke="#3563a9" stroke-width="2"/>
+  <rect x="235" y="90" width="150" height="80" rx="16" fill="#e6fff4" stroke="#248a5a" stroke-width="2"/>
+  <rect x="415" y="90" width="150" height="80" rx="16" fill="#fff2dc" stroke="#c27a00" stroke-width="2"/>
+  <rect x="595" y="90" width="150" height="80" rx="16" fill="#ffe4ef" stroke="#b83280" stroke-width="2"/>
+  <rect x="775" y="90" width="150" height="80" rx="16" fill="#ece9ff" stroke="#6d28d9" stroke-width="2"/>
+  <text x="90" y="128" font-family="Arial" font-size="20" fill="#1f2937">forward flow</text>
+  <text x="272" y="128" font-family="Arial" font-size="20" fill="#1f2937">backward credit</text>
+  <text x="444" y="128" font-family="Arial" font-size="20" fill="#1f2937">stability</text>
+  <text x="625" y="128" font-family="Arial" font-size="20" fill="#1f2937">uncertainty</text>
+  <text x="807" y="128" font-family="Arial" font-size="20" fill="#1f2937">composition</text>
+  <path d="M205 130 H235" stroke="#1f2937" stroke-width="4" fill="none"/>
+  <path d="M385 130 H415" stroke="#1f2937" stroke-width="4" fill="none"/>
+  <path d="M565 130 H595" stroke="#1f2937" stroke-width="4" fill="none"/>
+  <path d="M745 130 H775" stroke="#1f2937" stroke-width="4" fill="none"/>
+  <text x="62" y="225" font-family="Arial" font-size="18" fill="#1f2937">Examples:</text>
+  <text x="62" y="255" font-family="Arial" font-size="17" fill="#1f2937">convolution, attention, and transformers move information</text>
+  <text x="62" y="280" font-family="Arial" font-size="17" fill="#1f2937">backprop, losses, regularization, diffusion, and VAEs decide how learning behaves</text>
+</svg>

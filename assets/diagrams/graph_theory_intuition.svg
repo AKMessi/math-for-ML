@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+  <rect width="980" height="300" fill="#fbfcff"/>
+  <text x="40" y="42" font-family="Arial" font-size="28" fill="#1b263b">Graph Theory Intuition Map</text>
+  <circle cx="110" cy="145" r="22" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="210" cy="105" r="22" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="210" cy="185" r="22" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="310" cy="145" r="22" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <line x1="128" y1="137" x2="192" y2="113" stroke="#1b263b" stroke-width="3"/>
+  <line x1="128" y1="153" x2="192" y2="177" stroke="#1b263b" stroke-width="3"/>
+  <line x1="232" y1="105" x2="288" y2="145" stroke="#1b263b" stroke-width="3"/>
+  <line x1="232" y1="185" x2="288" y2="145" stroke="#1b263b" stroke-width="3"/>
+  <rect x="420" y="95" width="170" height="90" rx="16" fill="#e6fff4" stroke="#248a5a" stroke-width="2"/>
+  <rect x="650" y="95" width="230" height="90" rx="16" fill="#fff2dc" stroke="#c27a00" stroke-width="2"/>
+  <text x="430" y="132" font-family="Arial" font-size="22" fill="#1b263b">adjacency / Laplacian</text>
+  <text x="447" y="158" font-family="Arial" font-size="15" fill="#1b263b">matrix view of structure</text>
+  <text x="690" y="132" font-family="Arial" font-size="22" fill="#8a5a00">spectra / computation graphs</text>
+  <text x="712" y="158" font-family="Arial" font-size="15" fill="#8a5a00">smoothness, flow, dependency</text>
+  <path d="M330 145 H420" stroke="#1b263b" stroke-width="4" fill="none"/>
+  <path d="M590 145 H650" stroke="#1b263b" stroke-width="4" fill="none"/>
+  <text x="48" y="230" font-family="Arial" font-size="18" fill="#1b263b">Core movie:</text>
+  <text x="146" y="230" font-family="Arial" font-size="18" fill="#1b263b">picture of relationships -> matrix operator -> dynamics and dependency</text>
+</svg>
