@@ -7,6 +7,10 @@
 - [Numerical Linear Algebra](./03_numerical_linear_algebra.ipynb)
 - [Numerical Integration](./04_numerical_integration.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/numerical.py` re-exports `math_for_ml.numerical` for notebook-local imports.

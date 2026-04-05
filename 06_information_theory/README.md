@@ -7,6 +7,10 @@
 - [Mutual Information](./03_mutual_information.ipynb)
 - [Rate Distortion](./04_rate_distortion.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/information.py` re-exports `math_for_ml.information` for notebook-local imports.

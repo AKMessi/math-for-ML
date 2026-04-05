@@ -6,6 +6,10 @@
 - [Spectral Graph Theory](./02_spectral_graph_theory.ipynb)
 - [Computation Graphs](./03_computation_graphs.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/graphs.py` re-exports `math_for_ml.graphs` for notebook-local imports.

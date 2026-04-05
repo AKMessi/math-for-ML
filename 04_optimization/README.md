@@ -11,6 +11,10 @@
 - [Loss Landscapes](./07_loss_landscapes.ipynb)
 - [Learning Rate Theory](./08_learning_rate_theory.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/optimizers.py` re-exports `math_for_ml.optimizers` for notebook-local imports.

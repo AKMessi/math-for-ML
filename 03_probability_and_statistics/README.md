@@ -13,6 +13,10 @@
 - [Information Theory](./09_information_theory.ipynb)
 - [Hypothesis Testing](./10_hypothesis_testing.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/distributions.py` re-exports `math_for_ml.distributions` for notebook-local imports.

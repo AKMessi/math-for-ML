@@ -1165,6 +1165,7 @@ def write_notebook(path: Path, content: dict[str, object]) -> None:
 def topic_readme(title: str, module_name: str | None, notebooks: list[str]) -> str:
     lines = [f"# {title}", "", "## Lessons", ""]
     lines += [f"- [{title_from_name(nb)}](./{nb})" for nb in notebooks]
+    lines += ["", "## Start Here", "", "- [Intuition Guide](./intuition_guide.md)"]
     if module_name:
         lines += ["", "## Local Module", "", f"`src/{module_name}.py` re-exports `{IMPORTS[module_name]}` for notebook-local imports."]
     if title == "ML Math Applied":
@@ -1252,6 +1253,8 @@ python scripts/run_notebooks.py
 
 ## Sections
 
+Each section now includes an `intuition_guide.md` with high-level explanations and visuals before the notebook deep dive.
+
 | Section | Scope |
 | --- | --- |
 {topic_rows}
@@ -1279,8 +1282,10 @@ MIT. See [LICENSE](./LICENSE).
 
 
 def diagrams_readme() -> str:
+    diagram_dir = ROOT / "assets" / "diagrams"
+    existing = sorted(path.name for path in diagram_dir.glob("*.svg"))
     lines = ["# Diagrams", "", "Reusable SVG diagrams for notebooks and docs.", "", "## Catalog", ""]
-    lines += [f"- [{name}](./{name})" for name in sorted(DIAGRAMS)]
+    lines += [f"- [{name}](./{name})" for name in existing]
     return "\n".join(lines)
 
 
@@ -1299,9 +1304,9 @@ def generate() -> None:
     write_text(ROOT / "00_how_to_use" / "prerequisites.md", "# Prerequisites\n\n- Basic algebra and equation manipulation\n- Basic Python and package installation\n- Willingness to work through code, not just formulas\n\nIf something feels abstract, move to the implementation or visualization section first, then return to the derivation.\n")
     for name, content in CHEATSHEETS.items():
         write_text(ROOT / "cheatsheets" / name, content)
-    write_text(ROOT / "assets" / "diagrams" / "README.md", diagrams_readme())
     for name, svg in DIAGRAMS.items():
         write_text(ROOT / "assets" / "diagrams" / name, svg)
+    write_text(ROOT / "assets" / "diagrams" / "README.md", diagrams_readme())
 
     for directory, title, module_name, notebooks in TOPICS:
         topic_path = ROOT / directory

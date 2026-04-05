@@ -12,6 +12,10 @@
 - [Matrix Calculus](./08_matrix_calculus.ipynb)
 - [Automatic Differentiation](./09_automatic_differentiation.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/autodiff.py` re-exports `math_for_ml.autodiff` for notebook-local imports.

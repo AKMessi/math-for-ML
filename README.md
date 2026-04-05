@@ -66,6 +66,8 @@ python scripts/run_notebooks.py
 
 ## Sections
 
+Each section now includes an `intuition_guide.md` with high-level explanations and visuals before the notebook deep dive.
+
 | Section | Scope |
 | --- | --- |
 | [Linear Algebra](./01_linear_algebra/README.md) | 7 notebooks |

@@ -10,6 +10,10 @@
 - [PCA From Scratch](./06_PCA_from_scratch.ipynb)
 - [Norms And Distances](./07_norms_and_distances.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/linear_algebra.py` re-exports `math_for_ml.linear_algebra` for notebook-local imports.

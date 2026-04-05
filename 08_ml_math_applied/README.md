@@ -13,6 +13,10 @@
 - [Diffusion Models Math](./09_diffusion_models_math.ipynb)
 - [VAE Math](./10_VAE_math.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Local Module
 
 `src/ml_components.py` re-exports `math_for_ml.ml_components` for notebook-local imports.

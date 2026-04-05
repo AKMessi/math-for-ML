@@ -7,6 +7,10 @@
 - [Convolution Theorem](./03_convolution_theorem.ipynb)
 - [Positional Encodings](./04_positional_encodings.ipynb)
 
+## Start Here
+
+- [Intuition Guide](./intuition_guide.md)
+
 ## Suggested Order
 
 Work through the numbered notebooks in sequence.
