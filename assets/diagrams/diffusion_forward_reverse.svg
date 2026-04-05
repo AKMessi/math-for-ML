@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260">
+  <rect width="980" height="260" fill="#fbfaf8"/>
+  <text x="40" y="42" fill="#264653" font-size="26" font-family="Arial">Diffusion: Forward Noise and Reverse Denoising</text>
+  <circle cx="110" cy="132" r="44" fill="#cdeef3" stroke="#2a9d8f" stroke-width="2"/>
+  <circle cx="300" cy="132" r="44" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="490" cy="132" r="44" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="680" cy="132" r="44" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <circle cx="870" cy="132" r="44" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="84" y="138" font-size="20" font-family="Arial" fill="#0f766e">x0</text>
+  <text x="274" y="138" font-size="20" font-family="Arial" fill="#1d4ed8">x_t</text>
+  <text x="448" y="138" font-size="18" font-family="Arial" fill="#6d28d9">eps_theta</text>
+  <text x="646" y="138" font-size="18" font-family="Arial" fill="#9a3412">x_hat_0</text>
+  <text x="842" y="138" font-size="18" font-family="Arial" fill="#991b1b">x_t-1</text>
+  <path d="M154 132 H256" stroke="#264653" stroke-width="4" fill="none"/>
+  <path d="M344 132 H446" stroke="#264653" stroke-width="4" fill="none"/>
+  <path d="M534 132 H636" stroke="#264653" stroke-width="4" fill="none"/>
+  <path d="M724 132 H826" stroke="#264653" stroke-width="4" fill="none"/>
+  <text x="173" y="114" font-size="16" font-family="Arial" fill="#264653">add Gaussian noise</text>
+  <text x="350" y="114" font-size="16" font-family="Arial" fill="#264653">predict epsilon</text>
+  <text x="548" y="114" font-size="16" font-family="Arial" fill="#264653">recover clean signal</text>
+  <text x="742" y="114" font-size="16" font-family="Arial" fill="#264653">reverse step</text>
+</svg>

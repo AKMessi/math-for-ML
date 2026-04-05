@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260">
+  <rect width="900" height="260" fill="#f8fbfd"/>
+  <text x="40" y="44" fill="#133c55" font-size="26" font-family="Arial">Scaled Dot-Product Attention</text>
+  <rect x="40" y="90" width="130" height="80" rx="16" fill="#dceef8" stroke="#3c6e71" stroke-width="2"/>
+  <rect x="210" y="90" width="130" height="80" rx="16" fill="#dceef8" stroke="#3c6e71" stroke-width="2"/>
+  <rect x="380" y="90" width="150" height="80" rx="16" fill="#f4e8c1" stroke="#c98f2b" stroke-width="2"/>
+  <rect x="590" y="90" width="130" height="80" rx="16" fill="#e1f2df" stroke="#4f772d" stroke-width="2"/>
+  <rect x="760" y="90" width="100" height="80" rx="16" fill="#ffe2cc" stroke="#c16630" stroke-width="2"/>
+  <text x="92" y="138" fill="#133c55" font-size="24" font-family="Arial">Q</text>
+  <text x="262" y="138" fill="#133c55" font-size="24" font-family="Arial">K</text>
+  <text x="412" y="124" fill="#7c4f00" font-size="20" font-family="Arial">scores = QK^T / sqrt(d_k)</text>
+  <text x="628" y="124" fill="#335c34" font-size="20" font-family="Arial">softmax</text>
+  <text x="776" y="124" fill="#8f3d13" font-size="20" font-family="Arial">V</text>
+  <text x="770" y="150" fill="#8f3d13" font-size="20" font-family="Arial">context</text>
+  <path d="M170 130 H210" stroke="#133c55" stroke-width="4" fill="none"/>
+  <path d="M340 130 H380" stroke="#133c55" stroke-width="4" fill="none"/>
+  <path d="M530 130 H590" stroke="#7c4f00" stroke-width="4" fill="none"/>
+  <path d="M720 130 H760" stroke="#335c34" stroke-width="4" fill="none"/>
+  <path d="M810 170 V205 H470 V170" stroke="#8f3d13" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+  <text x="455" y="225" fill="#8f3d13" font-size="16" font-family="Arial">weights multiply values</text>
+</svg>

@@ -17,6 +17,11 @@
 
 `src/ml_components.py` re-exports `math_for_ml.ml_components` for notebook-local imports.
 
+## Highlights
+
+- Rich case studies now cover backpropagation, masked attention, transformer blocks, diffusion, and VAEs.
+- Reusable diagrams live under `../assets/diagrams/` and are referenced directly from the notebooks.
+
 ## Suggested Order
 
 Work through the numbered notebooks in sequence.

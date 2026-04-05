@@ -11,17 +11,25 @@ from math_for_ml.numerical import safe_softmax
 
 FloatArray = NDArray[np.float64]
 __all__ = [
+    "attention_scores",
     "batch_norm_forward",
+    "causal_attention_mask",
     "convolution_as_matrix_multiplication",
     "cross_entropy_loss",
     "direct_valid_convolution",
     "dropout",
+    "diffusion_forward_process",
+    "linear_beta_schedule",
     "focal_loss_binary",
     "im2col_2d",
     "l1_penalty",
     "l2_penalty",
+    "layer_norm_forward",
     "mean_squared_error",
+    "predict_clean_from_noise",
+    "reparameterize_gaussian",
     "scaled_dot_product_attention",
+    "vae_kl_divergence",
 ]
 
 
@@ -160,6 +168,58 @@ def batch_norm_forward(
     return output, cache
 
 
+def layer_norm_forward(
+    values: ArrayLike,
+    gamma: ArrayLike | None = None,
+    beta: ArrayLike | None = None,
+    *,
+    eps: float = 1e-5,
+) -> tuple[FloatArray, dict[str, FloatArray]]:
+    """Compute the forward pass of layer normalization."""
+
+    value_array = np.asarray(values, dtype=np.float64)
+    if value_array.ndim < 2:
+        raise ValueError("values must have at least two dimensions.")
+
+    feature_dim = value_array.shape[-1]
+    gamma_array = np.ones(feature_dim, dtype=np.float64) if gamma is None else np.asarray(gamma, dtype=np.float64)
+    beta_array = np.zeros(feature_dim, dtype=np.float64) if beta is None else np.asarray(beta, dtype=np.float64)
+    if gamma_array.shape != (feature_dim,) or beta_array.shape != (feature_dim,):
+        raise ValueError("gamma and beta must match the feature dimension.")
+
+    mean = value_array.mean(axis=-1, keepdims=True)
+    variance = value_array.var(axis=-1, keepdims=True)
+    normalized = (value_array - mean) / np.sqrt(variance + eps)
+    output = normalized * gamma_array + beta_array
+    cache = {
+        "mean": mean,
+        "variance": variance,
+        "normalized": normalized,
+    }
+    return output, cache
+
+
+def attention_scores(query: ArrayLike, key: ArrayLike) -> FloatArray:
+    """Compute scaled query-key compatibility scores."""
+
+    query_array = np.asarray(query, dtype=np.float64)
+    key_array = np.asarray(key, dtype=np.float64)
+    if query_array.shape[:-2] != key_array.shape[:-2]:
+        raise ValueError("query and key must share batch dimensions.")
+    if query_array.shape[-1] != key_array.shape[-1]:
+        raise ValueError("query and key must have the same key dimension.")
+
+    return query_array @ np.swapaxes(key_array, -1, -2) / np.sqrt(query_array.shape[-1])
+
+
+def causal_attention_mask(sequence_length: int) -> NDArray[np.bool_]:
+    """Create a lower-triangular causal mask."""
+
+    if sequence_length <= 0:
+        raise ValueError("sequence_length must be positive.")
+    return np.tril(np.ones((sequence_length, sequence_length), dtype=bool))
+
+
 def scaled_dot_product_attention(
     query: ArrayLike,
     key: ArrayLike,
@@ -192,14 +252,114 @@ def scaled_dot_product_attention(
     if key_array.shape[-2] != value_array.shape[-2]:
         raise ValueError("key and value must share the same sequence length.")
 
-    scale = np.sqrt(query_array.shape[-1])
-    scores = query_array @ np.swapaxes(key_array, -1, -2) / scale
+    scores = attention_scores(query_array, key_array)
     if mask is not None:
-        mask_array = np.asarray(mask)
+        mask_array = np.asarray(mask, dtype=bool)
         scores = np.where(mask_array, scores, -1e9)
     weights = safe_softmax(scores, axis=-1)
     output = weights @ value_array
     return output, weights
+
+
+def linear_beta_schedule(
+    num_steps: int,
+    *,
+    beta_start: float = 1e-4,
+    beta_end: float = 2e-2,
+) -> FloatArray:
+    """Create a linear diffusion beta schedule."""
+
+    if num_steps <= 0:
+        raise ValueError("num_steps must be positive.")
+    if not 0.0 < beta_start < beta_end < 1.0:
+        raise ValueError("betas must satisfy 0 < beta_start < beta_end < 1.")
+    return np.linspace(beta_start, beta_end, num_steps, dtype=np.float64)
+
+
+def diffusion_forward_process(
+    clean_sample: ArrayLike,
+    timestep: int,
+    betas: ArrayLike,
+    *,
+    noise: ArrayLike | None = None,
+) -> tuple[FloatArray, dict[str, Any]]:
+    """Sample from the DDPM forward process q(x_t | x_0)."""
+
+    beta_array = np.asarray(betas, dtype=np.float64)
+    if beta_array.ndim != 1:
+        raise ValueError("betas must be a 1D schedule.")
+    if not 0 <= timestep < len(beta_array):
+        raise ValueError("timestep must index the beta schedule.")
+
+    clean_array = np.asarray(clean_sample, dtype=np.float64)
+    noise_array = np.asarray(noise, dtype=np.float64) if noise is not None else np.random.default_rng().standard_normal(clean_array.shape)
+    if noise_array.shape != clean_array.shape:
+        raise ValueError("noise must have the same shape as clean_sample.")
+
+    alpha_bar_t = float(np.cumprod(1.0 - beta_array)[timestep])
+    signal_rate = float(np.sqrt(alpha_bar_t))
+    noise_rate = float(np.sqrt(1.0 - alpha_bar_t))
+    noisy_sample = signal_rate * clean_array + noise_rate * noise_array
+    cache = {
+        "alpha_bar_t": alpha_bar_t,
+        "signal_rate": signal_rate,
+        "noise_rate": noise_rate,
+        "noise": noise_array,
+    }
+    return noisy_sample, cache
+
+
+def predict_clean_from_noise(
+    noisy_sample: ArrayLike,
+    timestep: int,
+    predicted_noise: ArrayLike,
+    betas: ArrayLike,
+) -> FloatArray:
+    """Recover x_0 from x_t and a predicted noise sample."""
+
+    beta_array = np.asarray(betas, dtype=np.float64)
+    if beta_array.ndim != 1:
+        raise ValueError("betas must be a 1D schedule.")
+    if not 0 <= timestep < len(beta_array):
+        raise ValueError("timestep must index the beta schedule.")
+
+    noisy_array = np.asarray(noisy_sample, dtype=np.float64)
+    predicted_noise_array = np.asarray(predicted_noise, dtype=np.float64)
+    if noisy_array.shape != predicted_noise_array.shape:
+        raise ValueError("noisy_sample and predicted_noise must have the same shape.")
+
+    alpha_bar_t = float(np.cumprod(1.0 - beta_array)[timestep])
+    signal_rate = np.sqrt(alpha_bar_t)
+    noise_rate = np.sqrt(1.0 - alpha_bar_t)
+    return (noisy_array - noise_rate * predicted_noise_array) / signal_rate
+
+
+def reparameterize_gaussian(
+    mean: ArrayLike,
+    log_variance: ArrayLike,
+    *,
+    noise: ArrayLike | None = None,
+) -> FloatArray:
+    """Sample from a diagonal Gaussian using the reparameterization trick."""
+
+    mean_array = np.asarray(mean, dtype=np.float64)
+    log_variance_array = np.asarray(log_variance, dtype=np.float64)
+    if mean_array.shape != log_variance_array.shape:
+        raise ValueError("mean and log_variance must have the same shape.")
+    noise_array = np.asarray(noise, dtype=np.float64) if noise is not None else np.random.default_rng().standard_normal(mean_array.shape)
+    if noise_array.shape != mean_array.shape:
+        raise ValueError("noise must have the same shape as mean.")
+    return mean_array + np.exp(0.5 * log_variance_array) * noise_array
+
+
+def vae_kl_divergence(mean: ArrayLike, log_variance: ArrayLike) -> FloatArray:
+    """Compute KL(q(z|x) || N(0, I)) for a diagonal Gaussian posterior."""
+
+    mean_array = np.asarray(mean, dtype=np.float64)
+    log_variance_array = np.asarray(log_variance, dtype=np.float64)
+    if mean_array.shape != log_variance_array.shape:
+        raise ValueError("mean and log_variance must have the same shape.")
+    return 0.5 * np.sum(np.exp(log_variance_array) + mean_array**2 - 1.0 - log_variance_array, axis=-1)
 
 
 def im2col_2d(image: ArrayLike, kernel_shape: tuple[int, int], stride: int = 1) -> FloatArray:

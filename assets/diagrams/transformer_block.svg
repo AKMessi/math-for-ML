@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260">
+  <rect width="980" height="260" fill="#f8fafc"/>
+  <text x="40" y="42" fill="#0f172a" font-size="26" font-family="Arial">Transformer Block</text>
+  <rect x="60" y="92" width="130" height="82" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <rect x="250" y="92" width="170" height="82" rx="16" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <rect x="490" y="92" width="130" height="82" rx="16" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="680" y="92" width="170" height="82" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <rect x="880" y="92" width="60" height="82" rx="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="86" y="138" font-size="20" font-family="Arial" fill="#1d4ed8">tokens</text>
+  <text x="278" y="138" font-size="18" font-family="Arial" fill="#0c4a6e">masked attention</text>
+  <text x="518" y="138" font-size="18" font-family="Arial" fill="#166534">add + norm</text>
+  <text x="708" y="138" font-size="18" font-family="Arial" fill="#9a3412">feed-forward</text>
+  <text x="891" y="138" font-size="18" font-family="Arial" fill="#991b1b">y</text>
+  <path d="M190 133 H250" stroke="#334155" stroke-width="4" fill="none"/>
+  <path d="M420 133 H490" stroke="#334155" stroke-width="4" fill="none"/>
+  <path d="M620 133 H680" stroke="#334155" stroke-width="4" fill="none"/>
+  <path d="M850 133 H880" stroke="#334155" stroke-width="4" fill="none"/>
+  <path d="M125 200 V210 H555 V174" stroke="#dc2626" stroke-width="4" fill="none" stroke-dasharray="9 7"/>
+  <path d="M555 200 V210 H910 V174" stroke="#dc2626" stroke-width="4" fill="none" stroke-dasharray="9 7"/>
+  <text x="165" y="232" font-size="16" font-family="Arial" fill="#991b1b">residual paths preserve token information while new mixing is learned</text>
+</svg>
